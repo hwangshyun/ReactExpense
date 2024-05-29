@@ -18,7 +18,7 @@ const Input = styled.input`
 
 const Button = styled.button`
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #364351;
   color: white;
   border: none;
   cursor: pointer;
@@ -60,7 +60,7 @@ const Detail = () => {
     navigate('/');
   };
 
-  if (!expense) return <div>Loading...</div>;
+  if (!expense) return <div>로딩중...</div>;
 
   return (
     <DetailContainer>
@@ -85,8 +85,8 @@ const Detail = () => {
         onChange={handleChange}
         required
       />
-      <Button onClick={handleSave}>Save</Button>
-      <Button onClick={handleDelete} style={{ backgroundColor: 'red' }}>Delete</Button>
+      <Button onClick={handleSave}>저장</Button>
+      <Button onClick={handleDelete} style={{ backgroundColor: 'black', color:'white' }}>삭제</Button>
     </DetailContainer>
   );
 };

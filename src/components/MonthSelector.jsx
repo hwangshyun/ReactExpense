@@ -10,7 +10,7 @@ const Selector = styled.div`
 
 const Button = styled.button`
   padding: 10px;
-  background-color: ${(props) => (props.active ? '#007bff' : '#ccc')};
+  background-color: ${(props) => (props.active ? '#304357' : '#ccc')};
   color: white;
   border: none;
   cursor: pointer;

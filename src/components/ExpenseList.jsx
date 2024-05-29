@@ -9,7 +9,7 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   padding: 10px;
-  background: #fff;
+  background: white;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
@@ -20,9 +20,9 @@ const ExpenseList = ({ expenses }) => (
     {expenses.map((expense) => (
       <ListItem key={expense.id}>
         <div>
-          <strong>{expense.description}</strong> - ${expense.amount} on {new Date(expense.date).toLocaleDateString()}
+          <div>{expense.description}</div>{expense.amount}원  {new Date(expense.date).toLocaleDateString()}
         </div>
-        <Link to={`/detail/${expense.id}`}>Detail</Link>
+        <Link to={`/detail/${expense.id}`}>상세</Link>
       </ListItem>
     ))}
   </List>

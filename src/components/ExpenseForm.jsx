@@ -15,7 +15,7 @@ const Input = styled.input`
 
 const Button = styled.button`
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #42464a;
   color: white;
   border: none;
   cursor: pointer;
@@ -38,7 +38,11 @@ const ExpenseForm = ({ addExpense }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addExpense(formData);
+    const formattedAmount = formData.amount.replace(/[^0-9]/g, '');
+    addExpense({
+      ...formData,
+      amount: formattedAmount,
+    });
     setFormData({
       description: '',
       amount: '',
@@ -51,15 +55,15 @@ const ExpenseForm = ({ addExpense }) => {
       <Input
         type="text"
         name="description"
-        placeholder="Description"
+        placeholder="무엇을"
         value={formData.description}
         onChange={handleChange}
         required
       />
       <Input
-        type="number"
+        type="text"
         name="amount"
-        placeholder="Amount"
+        placeholder="얼마?"
         value={formData.amount}
         onChange={handleChange}
         required
@@ -71,7 +75,7 @@ const ExpenseForm = ({ addExpense }) => {
         onChange={handleChange}
         required
       />
-      <Button type="submit">Add Expense</Button>
+      <Button type="submit">지출 추가</Button>
     </Form>
   );
 };
